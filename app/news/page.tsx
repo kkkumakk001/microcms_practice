@@ -3,7 +3,7 @@ import NewsList from "@/app/_components/NewsList";
 import { NEWS_LIST_LIMIT } from "../_constants";
 import SearchField from "../_components/SearchField";
 
-export const revalidate = 0;
+export const revalidate = 60;
 
 export default async function Page() {
     const { contents: news } = await getNewsList({
