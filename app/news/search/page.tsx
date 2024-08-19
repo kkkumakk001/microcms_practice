@@ -9,14 +9,13 @@ type Props = {
 };
 
 export default async function Page({ searchParams }: Props) {
-    const { contents: news, totalCount } = await getNewsList({
+    const { contents: news } = await getNewsList({
         limit: 100,
         q: searchParams.q,
     });
 
     return (
         <>
-            <p>{searchParams.q}</p>
             <SearchField />
             <NewsList news={news} />
         </>
